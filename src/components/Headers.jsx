@@ -1,7 +1,11 @@
 import React from 'react'
 import Styles from '../styles/Shoprite.module.css'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const Headers = () => {
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <section>
         <header className={Styles.header1}>
@@ -47,7 +51,10 @@ export const Headers = () => {
                         <p><img src="/profile-icon.png" alt="" /> Login / Register</p>
                     </div>
                     <img src="/search-icon.png" alt="" />
-                    <img src="/cart-icon.png" alt="" />
+                    <Link to='/CheckoutPage'>
+                        <img src="/cart-icon.png" alt="" />
+                        <span>{totalQuantity}</span>
+                    </Link>
                     <img src="/favorites-icon.png" alt="" />
                 </section>
             </section>

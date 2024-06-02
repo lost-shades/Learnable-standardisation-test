@@ -1,12 +1,12 @@
 import React from 'react'
-import { BandageFooter, FeaturedPosts, FeaturedProducts, Feedback, Headers, HeroSection, LandingSection5, ProductList } from '../components'
+import { AllProducts, BandageFooter, FeaturedPosts, FeaturedProducts, Feedback, Headers, HeroSection, LandingSection5 } from '../components'
 
 export const LandingPage = () => {
   return (
     <section>
         <Headers />
         <HeroSection />
-        <ProductList />
+        <AllProducts />
         <FeaturedProducts />
         <FeaturedPosts />
         <Feedback />

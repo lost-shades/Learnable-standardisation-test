@@ -22,7 +22,7 @@ export const DescriptionInfo = () => {
           <p>Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
         </div>
         <div className={Styles.Description2ImgDiv}>
-          <img src="description img.png" alt="" />
+          <img src="/description img.png" alt="" />
         </div>
       </section>
     </section>
