@@ -16,12 +16,12 @@ export const Cart = () => {
     <main className={Styles.cartContainerMain}>
         <section>
             <h1>Shopping Cart</h1>
-            <table className={Styles.cartTable}>
+            <table className={Styles.cartTables}>
                 <thead>
-                <tr>
-                    <th>Item Detail</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                <tr className={Styles.cartTableTr}>
+                    <th className={Styles.cartTable1}>Item Detail</th>
+                    <th className={Styles.cartTable2}>Quantity</th>
+                    <th className={Styles.cartTable3}>Price</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,14 +42,14 @@ export const Cart = () => {
                     </td>
                     <td>
                         <div className={Styles.quantityControl}>
-                        <button onClick={() => dispatch(decrement({ id: item.id }))}>-</button>
-                        <span>{item.quantity}</span>
-                        <button onClick={() => dispatch(increment({ id: item.id }))}>+</button>
+                            <button onClick={() => dispatch(decrement({ id: item.id }))}>-</button>
+                            <span>{item.quantity}</span>
+                            <button className={Styles.quantityControlPlus} onClick={() => dispatch(increment({ id: item.id }))}>+</button>
                         </div>
                     </td>
                     <td>
                         <p>${(item.price * item.quantity).toFixed(2)}</p>
-                        <p>(${item.price.toFixed(2)} each)</p>
+                        <p>(${item.price.toFixed(2)} x 1 item)</p>
                     </td>
                     </tr>
                 ))}
@@ -58,21 +58,28 @@ export const Cart = () => {
         </section>
       
       <section className={Styles.cartSummary}>
-        <div className={Styles.orderSummary}>
-            <h3>Order Summary</h3>
-            <p>{totalQuantity} items</p>
+        <div className={Styles.orderSummaryDiv}>
+            <div className={Styles.orderSummary1}>
+                <h3>Order Summary</h3>
+                <p>{totalQuantity} items</p>
+            </div>
+            <div className={Styles.deliveryCharges}>
+                <h5>Delivery Charges</h5>
+                <p>Add your delivery address to checkout to see delivery charges</p>
+            </div>
         </div>
-        <div className={Styles.deliveryCharges}>
-            <h6>Delivery Charges</h6>
-            <p>Add your delivery address to checkout to see delivery charges</p>
-        </div>
-        <div className={Styles.subTotal}>
-            <h6>Subtotal</h6>
-            <p>${calculateTotalPrice()}</p>
-        </div>
-        <div className={Styles.subTotal}>
-            <h4>Total</h4>
-            <p>${calculateTotalPrice()}</p>
+        <div className={Styles.subTotalDiv}>
+            <div className={Styles.subTotal}>
+                <h5>SubTotal</h5>
+                <p>${calculateTotalPrice()}</p>
+            </div>
+            <div className={Styles.subTotal}>
+                <h4>Total</h4>
+                <p className={Styles.totalPrice}>${calculateTotalPrice()}</p>
+            </div>
+            <div className={Styles.subTotalLastPDiv}>
+                <p>Excluding Delivery Charges</p>
+            </div>            
         </div>
 
         <div className={Styles.checkoutButtonDiv}>
