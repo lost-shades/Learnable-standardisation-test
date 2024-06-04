@@ -573,7 +573,7 @@ ul li {
    .LandingSection5main {
     /* border: 5px solid red; */
     height: 640px;
-    background-image: url('public/unsplash 0.png');
+    background-image: url('/unsplash 0.png');
    }
    .LandingSection5Section {
     /* border: 3px solid blue; */
